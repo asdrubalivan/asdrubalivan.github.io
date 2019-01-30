@@ -15,6 +15,9 @@ const StyledLink = styled(Link)`
   color: white;
   text-transform: uppercase;
   font-weight: 800;
+  &:not(.active) {
+    text-decoration: none;
+  }
 `
 
 const Ul = styled.ul`
@@ -26,15 +29,18 @@ const Ul = styled.ul`
 const Li = styled.li`
   display: inline-block;
   margin-right: 1rem;
+  &:last-child {
+    margin-right: 0;
+  }
 `
 
 const Header = ({ siteTitle }) => (
   <Wrapper>
     <Ul>
-      <Li><StyledLink to="">Home</StyledLink></Li>
-      <Li><StyledLink to="">About</StyledLink></Li>
-      <Li><StyledLink to="">Works</StyledLink></Li>
-      <Li><StyledLink to="">Contact</StyledLink></Li>
+      <Li><StyledLink activeClassName="active" to="/">Home</StyledLink></Li>
+      <Li><StyledLink activeClassName="active" to="/about">About</StyledLink></Li>
+      <Li><StyledLink activeClassName="active" to="/works">Works</StyledLink></Li>
+      <Li><StyledLink activeClassName="active" to="/contact">Contact</StyledLink></Li>
     </Ul>
   </Wrapper>
 )
