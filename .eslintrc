@@ -40,10 +40,6 @@
         "code": 90
       }
     ],
-    "template-curly-spacing": [
-      "error",
-      "always"
-    ],
     "arrow-parens": [
       "error",
       "as-needed"
