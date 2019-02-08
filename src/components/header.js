@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import bg from '../images/background_blue.jpg'
 
 const Wrapper = styled.div`
-  background-image: url(${ bg });
+  background-image: url(${bg});
   height: 100vh;
   background-size: cover;
   position: relative;
@@ -14,21 +14,22 @@ const Wrapper = styled.div`
 const StyledLink = styled(Link)`
   color: white;
   text-transform: uppercase;
-  font-weight: 800;
-  &:not(.active) {
-    text-decoration: none;
+  font-weight: 700;
+  text-decoration: none;
+  &.active {
+    text-decoration: underline;
   }
 `
 
 const Ul = styled.ul`
   position: absolute;
-  right: 2rem;
-  top: 2rem;
+  right: 6rem;
+  top: 3rem;
 `
 
 const Li = styled.li`
   display: inline-block;
-  margin-right: 1rem;
+  margin-right: 1.2rem;
   &:last-child {
     margin-right: 0;
   }
