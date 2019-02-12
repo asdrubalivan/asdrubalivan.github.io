@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Title = styled.h2`
-  color: blue;
+  color: ${props => props.theme.darkBlue};
   font-size: 3rem;
   text-transform: uppercase;
 `
