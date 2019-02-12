@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import bg from '../images/background_blue.jpg'
+import logo from '../images/logo.svg'
 
 const Wrapper = styled.div`
   background-image: url(${bg});
@@ -35,6 +36,14 @@ const Li = styled.li`
   }
 `
 
+const LogoImg = styled.img`
+  width: 40rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
 const Header = ({ siteTitle }) => (
   <Wrapper>
     <Ul>
@@ -43,6 +52,7 @@ const Header = ({ siteTitle }) => (
       <Li><StyledLink activeClassName="active" to="/works">Works</StyledLink></Li>
       <Li><StyledLink activeClassName="active" to="/contact">Contact</StyledLink></Li>
     </Ul>
+    <LogoImg src={logo} />
   </Wrapper>
 )
 

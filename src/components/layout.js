@@ -11,6 +11,8 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            author
+            description
           }
         }
       }
@@ -19,6 +21,7 @@ const Layout = ({ children }) => (
       <>
         <GlobalStyle />
         <Header siteTitle={data.site.siteMetadata.title} />
+        {children}
       </>
     )}
   />
