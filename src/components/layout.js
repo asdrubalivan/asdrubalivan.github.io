@@ -11,7 +11,7 @@ const theme = {
   lightGray: '#F0F1F3',
 }
 
-const Layout = ({ children }) => (
+const Layout = ({ children, showMainLogo }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -28,13 +28,19 @@ const Layout = ({ children }) => (
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyle />
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header
+            showMainLogo={showMainLogo}
+            siteTitle={data.site.siteMetadata.title} />
           {children}
         </>
       </ThemeProvider>
     )}
   />
 )
+
+Layout.defaultProps = {
+  showMainLogo: false,
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

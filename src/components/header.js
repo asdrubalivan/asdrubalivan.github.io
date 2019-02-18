@@ -20,10 +20,10 @@ const LogoImg = styled.img`
   transform: translateX(-50%);
 `
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, showMainLogo }) => (
   <Wrapper>
     <HeaderLinks />
-    <LogoImg src={logo} />
+    {showMainLogo && <LogoImg src={logo} />}
   </Wrapper>
 )
 
@@ -33,6 +33,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   siteTitle: ``,
+  showMainLogo: false,
 }
 
 export default Header
