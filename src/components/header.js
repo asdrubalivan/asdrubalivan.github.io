@@ -14,34 +14,35 @@ const Wrapper = styled.div`
 
 const StyledLink = styled(Link)`
   color: white;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 2rem;
   text-decoration: none;
+  text-transform: uppercase;
   &.active {
-    text-decoration: underline;
+    border-bottom: 0.2rem solid white;
   }
 `
 
 const Ul = styled.ul`
   position: absolute;
-  right: 6rem;
-  top: 3rem;
+  right: 7rem;
+  top: 9vh;
 `
 
 const Li = styled.li`
   display: inline-block;
-  margin-right: 1.2rem;
+  margin-right: 5.5rem;
   &:last-child {
     margin-right: 0;
   }
 `
 
 const LogoImg = styled.img`
-  width: 40rem;
+  height: 50vh;
   position: absolute;
-  top: 50%;
+  top: 30vh;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 `
 
 const Header = ({ siteTitle }) => (
@@ -50,6 +51,7 @@ const Header = ({ siteTitle }) => (
       <Li><StyledLink activeClassName="active" to="/">Home</StyledLink></Li>
       <Li><StyledLink activeClassName="active" to="/about">About</StyledLink></Li>
       <Li><StyledLink activeClassName="active" to="/works">Works</StyledLink></Li>
+      <Li><StyledLink activeClassName="active" to="/blog">Blog</StyledLink></Li>
       <Li><StyledLink activeClassName="active" to="/contact">Contact</StyledLink></Li>
     </Ul>
     <LogoImg src={logo} />
