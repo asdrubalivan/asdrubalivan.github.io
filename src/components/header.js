@@ -7,7 +7,7 @@ import HeaderLinks from './headerlinks'
 
 const Wrapper = styled.div`
   background-image: url(${bg});
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   position: relative;
 `
