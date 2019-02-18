@@ -7,13 +7,13 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       box-sizing: inherit;
       font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-      src: url(${ woff });
+      src: url(${woff});
   }
   body {
     box-sizing: border-box;
   }
   html {
-    font-size: 100%;
+    font-size: 62.5%;
   }
 `
 
