@@ -45,14 +45,18 @@ const LogoImg = styled.img`
   transform: translateX(-50%);
 `
 
+const CustomLi = ({ to, children }) => (
+  <Li><StyledLink activeClassName="active" to={to}>{children}</StyledLink></Li>
+)
+
 const Header = ({ siteTitle }) => (
   <Wrapper>
     <Ul>
-      <Li><StyledLink activeClassName="active" to="/">Home</StyledLink></Li>
-      <Li><StyledLink activeClassName="active" to="/about">About</StyledLink></Li>
-      <Li><StyledLink activeClassName="active" to="/works">Works</StyledLink></Li>
-      <Li><StyledLink activeClassName="active" to="/blog">Blog</StyledLink></Li>
-      <Li><StyledLink activeClassName="active" to="/contact">Contact</StyledLink></Li>
+      <CustomLi to="/">Home</CustomLi>
+      <CustomLi to="/about">About</CustomLi>
+      <CustomLi to="/works">Works</CustomLi>
+      <CustomLi to="/blog">Blog</CustomLi>
+      <CustomLi to="/contact">Contact</CustomLi>
     </Ul>
     <LogoImg src={logo} />
   </Wrapper>
