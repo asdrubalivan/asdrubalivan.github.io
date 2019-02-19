@@ -3,9 +3,9 @@ import React from 'react'
 import styled from 'styled-components'
 import bg from '../images/background_blue.jpg'
 import logo from '../images/logo.svg'
-import HeaderLinks from './headerlinks'
+import HeaderSection from './headersection'
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   background-image: url(${bg});
   min-height: 100vh;
   background-size: cover;
@@ -22,8 +22,8 @@ const LogoImg = styled.img`
 
 const Header = ({ siteTitle, showMainLogo }) => (
   <Wrapper>
-    <HeaderLinks />
-    {showMainLogo && <LogoImg src={logo} />}
+    <HeaderSection />
+    {showMainLogo && <LogoImg src={logo} alt="Logo" />}
   </Wrapper>
 )
 

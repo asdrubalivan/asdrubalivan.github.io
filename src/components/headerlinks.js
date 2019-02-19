@@ -16,7 +16,7 @@ const StyledLink = styled(Link)`
 const Ul = styled.ul`
   position: absolute;
   right: 7rem;
-  top: 9vh;
+  top: ${props => props.theme.header.paddingTop};
 `
 
 const Li = styled.li`
