@@ -11,7 +11,7 @@ const SectionWrapper = styled.section`
   height: 100%;
   width: 100%;
   ${props => props.showBorder && css`
-    border-bottom: 0.1rem solid white;
+    border-bottom: 0.1rem solid ${props.blueBackground ? 'white' : props.theme.darkBlue};
   `}
 `
 
@@ -19,16 +19,21 @@ const Img = styled.img`
   display: inline-block;
   margin-top: 3rem;
   margin-left: 5rem;
+  ${props => !props.showLogo && css`
+    visibility: hidden;`}
 `
 
 const MarginBlock = styled.div`
   margin-bottom: 1rem;
 `
 
-const HeaderSection = ({ showLogo, logoColor, showBorder }) => (
-  <SectionWrapper showBorder={showBorder}>
-    {showLogo &&
-      <Img src={logoColor === 'white' ? whiteLogo : blueLogo} alt="Small logo" />}
+const HeaderSection = ({ showLogo, blueBackground, showBorder }) => (
+  <SectionWrapper
+    showBorder={showBorder}
+    blueBackground={blueBackground}>
+    <Img src={blueBackground ? whiteLogo : blueLogo}
+      alt="Small logo"
+      showLogo={showLogo} />
     <HeaderLinks />
     <Clearfix />
     <MarginBlock />
@@ -37,13 +42,13 @@ const HeaderSection = ({ showLogo, logoColor, showBorder }) => (
 
 HeaderSection.defaultProps = {
   showLogo: true,
-  logoColor: 'white',
   showBorder: true,
+  blueBackground: true,
 }
 
 HeaderSection.propTypes = {
   showLogo: PropTypes.bool,
-  logoColor: PropTypes.oneOf(['blue', 'white']),
+  blueBackground: PropTypes.bool,
   showBorder: PropTypes.bool,
 }
 

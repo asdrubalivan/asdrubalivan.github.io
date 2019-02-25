@@ -31,7 +31,7 @@ MainDiv.defaultProps = {
   blueBackground: true,
 }
 
-const Layout = ({ children, showMainLogo, blueBackground }) => (
+const Layout = ({ children, showMainLogo, showSmallLogo, blueBackground }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -50,6 +50,7 @@ const Layout = ({ children, showMainLogo, blueBackground }) => (
           <GlobalStyle />
           <Header
             showMainLogo={showMainLogo}
+            showSmallLogo={showSmallLogo}
             blueBackground={blueBackground}
             siteTitle={data.site.siteMetadata.title} />
           {children}
@@ -60,6 +61,7 @@ const Layout = ({ children, showMainLogo, blueBackground }) => (
 )
 
 Layout.defaultProps = {
+  showSmallLogo: true,
   showMainLogo: false,
   blueBackground: true,
 }
@@ -68,6 +70,7 @@ Layout.propTypes = {
   children: PropTypes.node,
   showMainLogo: PropTypes.bool,
   blueBackground: PropTypes.bool,
+  showSmallLogo: PropTypes.bool,
 }
 
 export default Layout
