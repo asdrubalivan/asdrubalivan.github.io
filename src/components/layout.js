@@ -10,7 +10,7 @@ const theme = {
   gray: '#7D8899',
   lightGray: '#F0F1F3',
   header: {
-    paddingTop: '9vh',
+    paddingTop: '7vh',
   }
 }
 

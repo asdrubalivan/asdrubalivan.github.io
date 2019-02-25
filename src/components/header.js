@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import bg from '../images/background_blue.jpg'
+import blueBackground from '../images/background_blue.jpg'
 import logo from '../images/logo.svg'
 import HeaderSection from './headersection'
 
 const Wrapper = styled.section`
-  background-image: url(${bg});
-  min-height: 100vh;
-  background-size: cover;
   position: relative;
+  display: block;
 `
 
 const LogoImg = styled.img`
@@ -20,9 +18,21 @@ const LogoImg = styled.img`
   transform: translateX(-50%);
 `
 
+const BlueBackground = styled.div`
+  background-image: url(${blueBackground});
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+`
+
 const Header = ({ siteTitle, showMainLogo }) => (
   <Wrapper>
     <HeaderSection />
+    <BlueBackground />
     {showMainLogo && <LogoImg src={logo} alt="Logo" />}
   </Wrapper>
 )

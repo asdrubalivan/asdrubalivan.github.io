@@ -14,9 +14,10 @@ const StyledLink = styled(Link)`
 `
 
 const Ul = styled.ul`
-  position: absolute;
-  right: 7rem;
-  top: ${props => props.theme.header.paddingTop};
+  display: inline-block;
+  float: right;
+  margin-right: 7rem;
+  margin-top: ${props => props.theme.header.paddingTop};
 `
 
 const Li = styled.li`
