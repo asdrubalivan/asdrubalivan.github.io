@@ -17,22 +17,22 @@ const LogoImg = styled.img`
   transform: translateX(-50%);
 `
 
-const Header = ({ siteTitle, showMainLogo, background }) => (
+const Header = ({ siteTitle, showMainLogo, blueBackground }) => (
   <Wrapper>
-    <HeaderSection />
+    <HeaderSection blueBackground={blueBackground} />
     {showMainLogo && <LogoImg src={logo} alt="Logo" />}
   </Wrapper>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  background: PropTypes.oneOf(['blue', 'white']),
+  blueBackground: PropTypes.bool,
 }
 
 Header.defaultProps = {
   siteTitle: ``,
   showMainLogo: false,
-  background: 'blue',
+  blueBackground: true,
 }
 
 export default Header
