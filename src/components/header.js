@@ -8,42 +8,35 @@ import HeaderSection from './headersection'
 const Wrapper = styled.section`
   position: relative;
   display: block;
+  min-height: 100vh;
+  background-size: cover;
+  background-image: url(${blueBackground});
 `
 
 const LogoImg = styled.img`
   height: 50vh;
-  position: absolute;
-  top: 30vh;
-  left: 50%;
+  position: relative;
+  margin-top: 15vh;
+  margin-left: 50%;
   transform: translateX(-50%);
 `
 
-const BlueBackground = styled.div`
-  background-image: url(${blueBackground});
-  min-height: 100vh;
-  width: 100%;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1000;
-`
-
-const Header = ({ siteTitle, showMainLogo }) => (
+const Header = ({ siteTitle, showMainLogo, background }) => (
   <Wrapper>
     <HeaderSection />
-    <BlueBackground />
     {showMainLogo && <LogoImg src={logo} alt="Logo" />}
   </Wrapper>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  background: PropTypes.oneOf(['blue', 'white']),
 }
 
 Header.defaultProps = {
   siteTitle: ``,
   showMainLogo: false,
+  background: 'blue',
 }
 
 export default Header
