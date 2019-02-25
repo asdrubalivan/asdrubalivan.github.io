@@ -5,6 +5,7 @@ import Header from './header'
 import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyle from './globalstyle'
 import blueBackground from '../images/background_blue.jpg'
+import whiteBackground from '../images/background_white.jpg'
 
 const theme = {
   darkBlue: '#152F4A',
@@ -18,10 +19,19 @@ const theme = {
 const MainDiv = styled.div`
   min-height: 100vh;
   background-size: cover;
-  background-image: url(${blueBackground});
+  background-image: url(${
+  props => props.blueBackground ? blueBackground : whiteBackground});
 `
 
-const Layout = ({ children, showMainLogo }) => (
+MainDiv.props = {
+  blueBackground: PropTypes.bool,
+}
+
+MainDiv.defaultProps = {
+  blueBackground: true,
+}
+
+const Layout = ({ children, showMainLogo, blueBackground }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -36,10 +46,11 @@ const Layout = ({ children, showMainLogo }) => (
     `}
     render={data => (
       <ThemeProvider theme={theme}>
-        <MainDiv>
+        <MainDiv blueBackground={blueBackground}>
           <GlobalStyle />
           <Header
             showMainLogo={showMainLogo}
+            blueBackground={blueBackground}
             siteTitle={data.site.siteMetadata.title} />
           {children}
         </MainDiv>
@@ -50,10 +61,13 @@ const Layout = ({ children, showMainLogo }) => (
 
 Layout.defaultProps = {
   showMainLogo: false,
+  blueBackground: true,
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+  showMainLogo: PropTypes.bool,
+  blueBackground: PropTypes.bool,
 }
 
 export default Layout
