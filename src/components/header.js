@@ -4,11 +4,6 @@ import styled from 'styled-components'
 import logo from '../images/logo.svg'
 import HeaderSection from './headersection'
 
-const Wrapper = styled.section`
-  position: relative;
-  display: block;
-`
-
 const LogoImg = styled.img`
   height: 50vh;
   position: relative;
@@ -18,10 +13,10 @@ const LogoImg = styled.img`
 `
 
 const Header = ({ siteTitle, showMainLogo, blueBackground }) => (
-  <Wrapper>
+  <>
     <HeaderSection blueBackground={blueBackground} />
     {showMainLogo && <LogoImg src={logo} alt="Logo" />}
-  </Wrapper>
+  </>
 )
 
 Header.propTypes = {
