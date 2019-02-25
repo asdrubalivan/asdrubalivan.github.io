@@ -34,7 +34,7 @@ const HeaderSection = ({ showLogo, blueBackground, showBorder }) => (
     <Img src={blueBackground ? whiteLogo : blueLogo}
       alt="Small logo"
       showLogo={showLogo} />
-    <HeaderLinks />
+    <HeaderLinks blueBackground={blueBackground} />
     <Clearfix />
     <MarginBlock />
   </SectionWrapper>

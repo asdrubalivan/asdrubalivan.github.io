@@ -2,14 +2,16 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
+const getColor = props => props.blueBackground ? 'white' : props.theme.darkBlue
+
 const StyledLink = styled(Link)`
-  color: white;
+  color: ${props => getColor(props)};
   font-weight: 600;
   font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
   &.active {
-    border-bottom: 0.2rem solid white;
+    border-bottom: 0.2rem solid ${props => getColor(props)};
   }
 `
 
@@ -28,17 +30,21 @@ const Li = styled.li`
   }
 `
 
-const CustomLi = ({ to, children }) => (
-  <Li><StyledLink activeClassName="active" to={to}>{children}</StyledLink></Li>
+const CustomLi = ({ to, children, blueBackground }) => (
+  <Li>
+    <StyledLink activeClassName="active" to={to} blueBackground={blueBackground}>
+      {children}
+    </StyledLink>
+  </Li>
 )
 
-const HeaderLinks = () => (
+const HeaderLinks = ({ blueBackground }) => (
   <Ul>
-    <CustomLi to="/">Home</CustomLi>
-    <CustomLi to="/about">About</CustomLi>
-    <CustomLi to="/works">Works</CustomLi>
-    <CustomLi to="/blog">Blog</CustomLi>
-    <CustomLi to="/contact">Contact</CustomLi>
+    <CustomLi blueBackground={blueBackground} to="/">Home</CustomLi>
+    <CustomLi blueBackground={blueBackground} to="/about">About</CustomLi>
+    <CustomLi blueBackground={blueBackground} to="/works">Works</CustomLi>
+    <CustomLi blueBackground={blueBackground} to="/blog">Blog</CustomLi>
+    <CustomLi blueBackground={blueBackground} to="/contact">Contact</CustomLi>
   </Ul>
 )
 
