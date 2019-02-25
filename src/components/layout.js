@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyle from './globalstyle'
+import blueBackground from '../images/background_blue.jpg'
 
 const theme = {
   darkBlue: '#152F4A',
@@ -13,6 +14,12 @@ const theme = {
     paddingTop: '7vh',
   }
 }
+
+const MainDiv = styled.div`
+  min-height: 100vh;
+  background-size: cover;
+  background-image: url(${blueBackground});
+`
 
 const Layout = ({ children, showMainLogo }) => (
   <StaticQuery
@@ -29,13 +36,13 @@ const Layout = ({ children, showMainLogo }) => (
     `}
     render={data => (
       <ThemeProvider theme={theme}>
-        <>
+        <MainDiv>
           <GlobalStyle />
           <Header
             showMainLogo={showMainLogo}
             siteTitle={data.site.siteMetadata.title} />
           {children}
-        </>
+        </MainDiv>
       </ThemeProvider>
     )}
   />

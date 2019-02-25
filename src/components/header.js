@@ -1,16 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import blueBackground from '../images/background_blue.jpg'
 import logo from '../images/logo.svg'
 import HeaderSection from './headersection'
 
 const Wrapper = styled.section`
   position: relative;
   display: block;
-  min-height: 100vh;
-  background-size: cover;
-  background-image: url(${blueBackground});
 `
 
 const LogoImg = styled.img`
