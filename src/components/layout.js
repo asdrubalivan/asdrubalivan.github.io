@@ -18,6 +18,7 @@ const theme = {
 
 const MainDiv = styled.div`
   min-height: 100vh;
+  width: 100vw;
   background-size: cover;
   background-image: url(${
   props => props.blueBackground ? blueBackground : whiteBackground});
