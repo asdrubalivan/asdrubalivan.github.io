@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { H2, P } from './tags'
 
-const Title = styled.h2`
-  color: ${props => props.theme.darkBlue};
-  font-size: 3rem;
-  text-transform: uppercase;
+const Title = styled(H2)`
+  margin-top: 8rem;
+  margin-bottom: 5rem;
 `
 
-const Text = styled.p`
-  color: red;
+const Text = styled(P)`
+  text-align: center;
 `
 
 const AboutParagraph = ({ children, title }) => (
