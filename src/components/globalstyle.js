@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     box-sizing: border-box;
+    > div {
+      overflow-x: hidden;
+    }
   }
   html {
     font-size: 62.5%;
