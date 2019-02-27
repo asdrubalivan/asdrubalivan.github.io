@@ -20,7 +20,7 @@ const Img = styled.img`
 
 const BlogPage = () => (
   <Layout blueBackground>
-    <SEO title="Works" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Blog" keywords={[`gatsby`, `application`, `react`]} />
     <SectionBlog>
       <H2 blueBackground>Blog</H2>
       <Img alt="Under construction" src={UnderConstruction} />
