@@ -30,7 +30,7 @@ const Img = styled.img`
 
 const AboutPage = () => (
   <Layout showMainLogo={false} blueBackground={false}>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
     <AboutParagraph title={'Something about me'}>
       Et, egestas quis ipsum suspendisse ultrices gravida! Nam libero justo
       laoreet sit amet cursus sit amet
