@@ -17,10 +17,12 @@ const commonInputProps = props => `
   outline: 0.1rem solid ${props.theme.darkBlue};
   &::placeholder {
     color: ${props.theme.darkBlue};
+    opacity: 0.7;
   }
   width: 46rem;
   margin-top: 1rem;
   padding: 1rem;
+  background-color: ${props.theme.lightGray};
 `
 
 const Form = styled.form`
@@ -44,6 +46,9 @@ const SubmitButton = styled.button`
   text-transform: uppercase;
   border: 0.1rem solid ${props => props.theme.darkBlue};
   padding: 1rem 4rem;
+  background-color: ${props => props.theme.lightGray};
+  transition: transform 200ms ease-in-out;
+  &:hover { transform: scale(1.2); }
 `
 
 const ContactPage = () => (
