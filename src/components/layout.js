@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
+import Footer from './footer'
 import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyle from './globalstyle'
 import blueBackground from '../images/background_blue.jpg'
@@ -32,7 +33,7 @@ MainDiv.defaultProps = {
   blueBackground: true,
 }
 
-const Layout = ({ children, showMainLogo, showSmallLogo, blueBackground }) => (
+const Layout = ({ children, showMainLogo, showSmallLogo, blueBackground, renderFooter }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -47,15 +48,18 @@ const Layout = ({ children, showMainLogo, showSmallLogo, blueBackground }) => (
     `}
     render={data => (
       <ThemeProvider theme={theme}>
-        <MainDiv blueBackground={blueBackground}>
-          <GlobalStyle />
-          <Header
-            showMainLogo={showMainLogo}
-            showSmallLogo={showSmallLogo}
-            blueBackground={blueBackground}
-            siteTitle={data.site.siteMetadata.title} />
-          {children}
-        </MainDiv>
+        <>
+          <MainDiv blueBackground={blueBackground}>
+            <GlobalStyle />
+            <Header
+              showMainLogo={showMainLogo}
+              showSmallLogo={showSmallLogo}
+              blueBackground={blueBackground}
+              siteTitle={data.site.siteMetadata.title} />
+            {children}
+          </MainDiv>
+          {renderFooter && <Footer />}
+        </>
       </ThemeProvider>
     )}
   />
@@ -65,6 +69,7 @@ Layout.defaultProps = {
   showSmallLogo: true,
   showMainLogo: false,
   blueBackground: true,
+  renderFooter: true,
 }
 
 Layout.propTypes = {
@@ -72,6 +77,7 @@ Layout.propTypes = {
   showMainLogo: PropTypes.bool,
   blueBackground: PropTypes.bool,
   showSmallLogo: PropTypes.bool,
+  renderFooter: PropTypes.bool,
 }
 
 export default Layout
