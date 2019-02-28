@@ -6,9 +6,21 @@ import { H2 } from '../components/tags'
 
 const SectionContact = styled.section`
   margin-top: 8rem;
+  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+const commonInputProps = props => `
+  color: ${props.theme.darkBlue};
+  border-width: 0;
+  outline: 0.1rem solid ${props.theme.darkBlue};
+  &::placeholder {
+    color: ${props.theme.darkBlue};
+  }
+  width: 46rem;
+  margin-top: 1rem;
+  padding: 1rem;
 `
 
 const Form = styled.form`
@@ -19,7 +31,19 @@ const Form = styled.form`
 `
 
 const Input = styled.input`
-  width: 100%;
+  ${commonInputProps}
+`
+
+const TextArea = styled.textarea`
+  ${commonInputProps}
+`
+
+const SubmitButton = styled.button`
+  color: ${props => props.theme.darkBlue};
+  margin: 2rem auto;
+  text-transform: uppercase;
+  border: 0.1rem solid ${props => props.theme.darkBlue};
+  padding: 1rem 4rem;
 `
 
 const ContactPage = () => (
@@ -31,9 +55,8 @@ const ContactPage = () => (
         <Input name="" type="text" value="" placeholder="Name" />
         <Input name="" type="text" value="" placeholder="Email" />
         <Input name="" type="text" value="" placeholder="Subject" />
-        <textarea cols="30" id="" name="" rows="10" placeholder="Your message">
-
-        </textarea>
+        <TextArea cols="30" id="" name="" rows="10" placeholder="Your message" />
+        <SubmitButton type="submit">Submit</SubmitButton>
       </Form>
     </SectionContact>
   </Layout>
