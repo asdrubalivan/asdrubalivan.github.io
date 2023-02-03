@@ -1,6 +1,7 @@
-# asdrubalivan.github.io
-My own website
+# asdrubalivan.com
 
-## Under construction
+This is a website in construction stage, in the meantime, you can check my social links
 
-Trying again
+- [Personal twitter](https://twitter.com/asdrubalivan)
+- [Programming twitter](https://twitter.com/asdrucodes)
+- [LinkedIn](https://www.linkedin.com/in/asdrubalivan)
